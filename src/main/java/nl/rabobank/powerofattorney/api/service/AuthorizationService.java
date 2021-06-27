@@ -9,6 +9,4 @@ public interface AuthorizationService {
 
         public abstract List<Authorization> getAuthorizations(Long id);
 
-//        public abstract ClientInfo getClientInfo(Long id);
-
 }

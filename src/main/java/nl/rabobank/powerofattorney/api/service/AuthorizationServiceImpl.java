@@ -10,16 +10,10 @@ import java.util.List;
 @Service
 public class AuthorizationServiceImpl implements AuthorizationService {
 
-//    @Autowired
-//    private ClientInfo clientInfo;
-
     @Override
     public List<Authorization> getAuthorizations(Long id) {
+        // TODO this is where the magic happens
         return null;
     }
-//
-//    @Override
-//    public ClientInfo getClientInfo(Long id) {
-//        return null;
-//    }
+
 }

@@ -17,6 +17,15 @@ public class AccountController {
     private AccountService accountService;
 
     @RequestMapping(
+            value = "",
+            method = RequestMethod.GET,
+            produces = "application/json"
+    )
+    public ResponseEntity<Account> getAccounts() {
+        return new ResponseEntity(accountService.findAll(), HttpStatus.OK);
+    }
+
+    @RequestMapping(
             value = "/{id}",
             method = RequestMethod.GET,
             produces = "application/json"
@@ -24,5 +33,7 @@ public class AccountController {
     public ResponseEntity<Account> getAccountById(Long id) {
         return new ResponseEntity(accountService.findById(id), HttpStatus.OK);
     }
+
+
 
 }

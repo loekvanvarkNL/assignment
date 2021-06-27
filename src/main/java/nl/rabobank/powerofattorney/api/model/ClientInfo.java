@@ -18,17 +18,8 @@ import java.util.List;
 @Builder
 public class ClientInfo {
 
-    @NonNull
     private Long id;
 
-//    private List<DebitCard> debitCards;
-//
-//    private List<CreditCard> creditCards;
-//
-//    private List<Authorization> authorizations;
-//
-//    private List<String> grantors;
-//
-//    private List<String> grantees;
+    private List<AggregatedClientInfo> aggregatedClientInfo;
 
 }
