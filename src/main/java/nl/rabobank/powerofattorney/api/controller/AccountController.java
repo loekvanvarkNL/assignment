@@ -25,14 +25,4 @@ public class AccountController {
         return new ResponseEntity(accountService.findById(id), HttpStatus.OK);
     }
 
-    @RequestMapping(
-            value = "/{owner}",
-            method = RequestMethod.GET,
-            produces = "application/json"
-    )
-    public ResponseEntity<Account> getAccountByOwner(String owner) {
-        return new ResponseEntity(accountService.findByOwner(owner), HttpStatus.OK);
-    }
-
-
 }

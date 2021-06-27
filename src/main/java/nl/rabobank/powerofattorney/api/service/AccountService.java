@@ -9,7 +9,7 @@ public interface AccountService {
 
     public abstract Account findById(Long id) throws EntityNotFoundException;
 
-    public abstract Account findByOwner(String owner) throws EntityNotFoundException;
+//    public abstract Account findByOwner(String owner) throws EntityNotFoundException;
 
 
 

@@ -1,28 +1,27 @@
 package nl.rabobank.powerofattorney.api.service;
 
 import nl.rabobank.powerofattorney.api.model.Account;
-import nl.rabobank.powerofattorney.api.repo.AccountRepo;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.HttpClientErrorException;
-
-import javax.persistence.EntityNotFoundException;
+import org.springframework.web.client.RestTemplate;
 
 @Service
 public class AccountServiceImpl implements AccountService {
 
-    @Autowired
-    private AccountRepo accountRepo;
+    @Value("${poa.accounts.url}")
+    private String url;
+
+    private final RestTemplate restTemplate;
+
+    public AccountServiceImpl(RestTemplateBuilder restTemplateBuilder) {
+        this.restTemplate = restTemplateBuilder.build();
+    }
 
     @Override
     public Account findById(Long id) throws HttpClientErrorException.NotFound {
-        return accountRepo.findById(id)
-                .orElseThrow(() -> new EntityNotFoundException(id.toString()));
-            }
-
-    @Override
-    public Account findByOwner(String owner) throws HttpClientErrorException.NotFound {
-        return accountRepo.findByOwner(owner)
-                .orElseThrow(() -> new EntityNotFoundException(owner));
+        return restTemplate.getForObject(url + id.toString(), Account.class);
     }
+
 }
