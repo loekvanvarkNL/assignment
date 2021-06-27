@@ -6,17 +6,12 @@ import lombok.NoArgsConstructor;
 import nl.rabobank.powerofattorney.api.model.enums.CardStatus;
 import org.springframework.lang.NonNull;
 
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import java.math.BigDecimal;
-
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 public abstract class AbstractCard {
 
-    @Id
-    @GeneratedValue
+    @NonNull
     private Long id;
 
     @NonNull
