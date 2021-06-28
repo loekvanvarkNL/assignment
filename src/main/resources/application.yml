@@ -1,0 +1,38 @@
+server:
+  port: 8081
+  servlet:
+    contextPath: /api
+    error:
+  include-message: always
+  include-binding-errors: always
+  include-stacktrace: on_trace_param
+  include-exception: false
+
+spring:
+  jpa:
+    database: POSTGRESQL
+    hibernate.ddl-auto: create-drop
+    use-new-id-generator-mappings: true
+    show-sql: true
+    format-sql: true
+    database-platform: org.hibernate.dialect.PostgreSQL94Dialect
+    hibernate.naming.implicit-strategy: org.hibernate.boot.model.naming.ImplicitNamingStrategyJpaCompliantImpl
+
+  datasource:
+    platform: postgres
+    driverClassName: org.postgresql.Driver
+    url: jdbc:postgresql://${db.host:localhost}:${db.port:5432}/poa-db
+    createDatabaseIfNotExist: true
+    username: poa
+    password: poa123
+    hikari.connectionTimeout: 20000
+    hikari.maximumPoolSize: 25
+
+
+poa:
+  accounts.url: http://localhost:8080/accounts/
+  creditcards.url: http://localhost:8080/credit-cards/
+  debitcards.url: http://localhost:8080/debit-cards/
+  powerofattorneys.url: http://localhost:8080/power-of-attorneys/
+
+

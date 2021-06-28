@@ -1,0 +1,22 @@
+version: '3.3'
+
+services:
+  poa-db:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_DB: poa-db
+      POSTGRES_USER: poa
+      POSTGRES_PASSWORD: poa123
+
+    ports:
+      - "5432:5432"
+    expose:
+      # Opens port on the container
+      - "5432"
+    volumes:
+      # Where data will be persisted
+      - db:/var/lib/postgres/data
+
+volumes:
+  db:

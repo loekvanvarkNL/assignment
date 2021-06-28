@@ -26,3 +26,8 @@ This awesome web service provides REST API for accessing power of attorney infor
   - If the assignment is unclear, do what you feel is best and focus on the code, not the exercise
   - We look at the quality and readability of code that has been delivered more than if the functionality matches our expectations
   - Impress us!
+
+# Notes by Loek
+  - Unfinished state; api & rest client need work
+  - Run with `mvn spring-boot:run`
+  - exposed at localhost:8081/api/accounts/{id}
