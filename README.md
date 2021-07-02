@@ -28,11 +28,6 @@ This awesome web service provides REST API for accessing power of attorney infor
   - Impress us!
 
 # Notes by Loek
-<<<<<<< HEAD
-  - Unfinished state; api & rest client need work
-  - Run with `mvn spring-boot:run`
-  - exposed at localhost:8081/api/accounts/{id}
-=======
   - Assignment API (spring-boot)
   - Run with `mvn spring-boot:run` (depends on json-stub mock app above)
   - Despite new deadline, this project does not complete the assignment in a way I would like, as there's missing
@@ -43,5 +38,3 @@ This awesome web service provides REST API for accessing power of attorney infor
   - Exposed at 
         - localhost:8081/api/debitcards/1111
         - localhost:8081/api/clients/poa-ids/
-    
->>>>>>> friday
