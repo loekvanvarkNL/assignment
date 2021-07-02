@@ -12,7 +12,7 @@ import org.springframework.lang.NonNull;
 public abstract class AbstractCard {
 
     @NonNull
-    private Long id;
+    private String id;
 
     @NonNull
     private CardStatus cardStatus;

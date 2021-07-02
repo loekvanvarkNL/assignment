@@ -11,6 +11,8 @@ import java.util.List;
 
 /**
  * Information on products and authorizations of a client
+ * A Client has an id, and might have multiple products/authorizations in the form of AggregatedClientInfo
+ *
  */
 @Data
 @NoArgsConstructor
@@ -18,7 +20,7 @@ import java.util.List;
 @Builder
 public class ClientInfo {
 
-    private Long id;
+    private String id; // userId
 
     private List<AggregatedClientInfo> aggregatedClientInfo;
 

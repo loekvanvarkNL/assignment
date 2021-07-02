@@ -2,6 +2,7 @@ package nl.rabobank.powerofattorney.stub;
 
 import static com.github.tomakehurst.wiremock.client.WireMock.aResponse;
 import static com.github.tomakehurst.wiremock.client.WireMock.get;
+import static com.github.tomakehurst.wiremock.client.WireMock.serverError;
 import static com.github.tomakehurst.wiremock.client.WireMock.stubFor;
 import static com.github.tomakehurst.wiremock.client.WireMock.urlMatching;
 
@@ -44,7 +45,6 @@ public class JsonStub {
                 .willReturn(
                         aResponse()
                                 .withBodyFile("poa/poa.json")
-                                .withFixedDelay(100)
                                 .withHeader(CONTENT_TYPE_HEADER, CONTENT_TYPE_JSON)));
 
         // Get power of attorney details
@@ -52,7 +52,6 @@ public class JsonStub {
                 .willReturn(
                         aResponse()
                                 .withBodyFile("poa/{{request.path.[1]}}.json")
-                                .withFixedDelay(100)
                                 .withHeader(CONTENT_TYPE_HEADER, CONTENT_TYPE_JSON)));
 
         // Get account details
@@ -60,7 +59,7 @@ public class JsonStub {
                 .willReturn(
                         aResponse()
                                 .withBodyFile("accounts/{{request.path.[1]}}.json")
-                                .withFixedDelay(100)
+                                .withFixedDelay(500)
                                 .withHeader(CONTENT_TYPE_HEADER, CONTENT_TYPE_JSON)));
 
         // Get debit card details
@@ -68,16 +67,20 @@ public class JsonStub {
                 .willReturn(
                         aResponse()
                                 .withBodyFile("debit-card/{{request.path.[1]}}.json")
-                                .withFixedDelay(100)
+                                .withFixedDelay(2000)
                                 .withHeader(CONTENT_TYPE_HEADER, CONTENT_TYPE_JSON)));
 
         // Get debit card details
-        stubFor(get(urlMatching("/credit-cards/\\d+"))
+        stubFor(get(urlMatching("/debit-cards/3333"))
                 .willReturn(
-                        aResponse()
-                                .withBodyFile("credit-card/{{request.path.[1]}}.json")
-                                .withFixedDelay(100)
-                                .withHeader(CONTENT_TYPE_HEADER, CONTENT_TYPE_JSON)));
+                        serverError()));
+
+        // Get debit card details
+        stubFor(get(urlMatching("/credit-cards/\\d+"))
+                .willReturn(aResponse()
+                        .withBodyFile("credit-card/{{request.path.[1]}}.json")
+                        .withFixedDelay(2000)
+                        .withHeader(CONTENT_TYPE_HEADER, CONTENT_TYPE_JSON)));
     }
 
     public static void main(final String[] args) {

@@ -2,18 +2,20 @@ package nl.rabobank.powerofattorney.api.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import nl.rabobank.powerofattorney.api.model.enums.CardType;
+
+import java.util.List;
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@JsonIgnoreProperties
-public class PoaCard {
+@Builder
+@JsonIgnoreProperties(ignoreUnknown = true)
+public class PowerOfAttorneys {
 
-    private String id;
-
-    private CardType cardType;
+//    private List<RegisteredPowerOfAttorney> registeredPowerOfAttorneys;
+    private List<String> listOfPoaIds;
 
 }

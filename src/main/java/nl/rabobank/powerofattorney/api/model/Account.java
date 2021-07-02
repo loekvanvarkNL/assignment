@@ -10,11 +10,7 @@ import java.time.LocalDate;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-
 public class Account {
-
-    @NonNull
-    private Long id;
 
     @NonNull
     private String owner;

@@ -3,11 +3,20 @@ server:
   servlet:
     contextPath: /api
     error:
+<<<<<<< HEAD
   include-message: always
   include-binding-errors: always
   include-stacktrace: on_trace_param
   include-exception: false
 
+=======
+      include-message: always
+      include-binding-errors: always
+      include-stacktrace: on_trace_param
+      include-exception: false
+
+# TODO add peristence layer (using docker-compose to run a postgres sserver)
+>>>>>>> friday
 spring:
   jpa:
     database: POSTGRESQL
@@ -29,10 +38,21 @@ spring:
     hikari.maximumPoolSize: 25
 
 
+<<<<<<< HEAD
 poa:
   accounts.url: http://localhost:8080/accounts/
   creditcards.url: http://localhost:8080/credit-cards/
   debitcards.url: http://localhost:8080/debit-cards/
   powerofattorneys.url: http://localhost:8080/power-of-attorneys/
 
+=======
+stub:
+  base.url: http://localhost:8080/
+  accounts.url: accounts/
+  clients.url: clients/
+  creditcards.url: credit-cards/
+  debitcards.url: debit-cards/
+  powerofattorneys.url: power-of-attorneys
+  abstractcards.url: abstract-cards/
+>>>>>>> friday
 

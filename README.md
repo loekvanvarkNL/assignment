@@ -13,14 +13,14 @@ This awesome web service provides REST API for accessing power of attorney infor
   - Build a REST API presenting aggregated information from different services
   - Only show data that a user is actually authorized for
   - Handle any server errors you might run into gracefully
-  
+
 # Requirements
   - Requirements of the code and functionality is up to the candidate
   - We suggest using Java 11, Spring-Boot & Maven, but using Kotlin or Gradle is also fine
   - Perform whatever validation seems necessary
   - Don't return inactive products or accounts
   - (Optional) Expose the API over HTTPS
- 
+
 # Tips
   - Because every candidate has different experience and background, the candidate should decide on how complex code they want to show us
   - If the assignment is unclear, do what you feel is best and focus on the code, not the exercise
@@ -28,6 +28,20 @@ This awesome web service provides REST API for accessing power of attorney infor
   - Impress us!
 
 # Notes by Loek
+<<<<<<< HEAD
   - Unfinished state; api & rest client need work
   - Run with `mvn spring-boot:run`
   - exposed at localhost:8081/api/accounts/{id}
+=======
+  - Assignment API (spring-boot)
+  - Run with `mvn spring-boot:run` (depends on json-stub mock app above)
+  - Despite new deadline, this project does not complete the assignment in a way I would like, as there's missing
+      - an api endpoint to retrieve aggregated information on a client
+      - unit tests are missing
+      - project structure (a parent pom with modules)
+      - persistence layer
+  - Exposed at 
+        - localhost:8081/api/debitcards/1111
+        - localhost:8081/api/clients/poa-ids/
+    
+>>>>>>> friday
